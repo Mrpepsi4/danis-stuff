@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work in Progress</title>
+    <title>Tic Tac Toe Game</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+        .container {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             height: 100vh;
-            background-image: url('Background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .install-btn {
+            padding: 10px 20px;
+            margin-top: 10px;
             text-align: center;
-            text-shadow: 2px 2px 4px #000;
-        }
-        
-        .container {
-            max-width: 600px;
-            padding: 20px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .watermark {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <audio src="music.mp3" autoplay loop></audio>
     <div class="container">
-        <h1>This site is still a work in progress.</h1>
-        <p>Thanks to GitHub though, I can host it! YAYAYAY This will eventually be a site where I post my creations (for that amount of time) then I'll move on to GitHub. I just think starting with a site is better first! Your own type of design is better than being forced to use someone else's! For now, you can type /socials.html in the websites name to get to my socials.</p>
+        <div class="box">
+            <h2>Tic tac Toe! V1</h2>
+            <p>A game of tic tac toe where you fight against another user or yourself. Made in Python, however, does not need Python to play.</p>
+            <button class="install-btn" onclick="downloadSetup()">Install</button>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
-    <div class="watermark">Dani Boi</div>
+
+    <script>
+        function downloadSetup() {
+            // Create a link element
+            const link = document.createElement('a');
+            link.setAttribute('href', 'path_to_Setup.exe');
+            link.setAttribute('download', 'Setup.exe');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
